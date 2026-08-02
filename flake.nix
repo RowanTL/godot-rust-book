@@ -1,7 +1,7 @@
 {
   description = "The godot-rust book — mdbook toolchain";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/f665af0cdb70ed27e1bd8f9fdfecaf451260fc55";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/5f02c91314c8ba4afe83b256b023756412218535";
 
   outputs = { self, nixpkgs }:
     let
