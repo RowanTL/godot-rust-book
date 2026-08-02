@@ -5,7 +5,6 @@
 
 [book]
 authors = ["Bromeon", "godot-rust contributors"]
-multilingual = false
 language = "en"
 src = "src"
 title = "The godot-rust book"
