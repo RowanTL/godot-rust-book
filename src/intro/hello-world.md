@@ -332,7 +332,7 @@ Now that initialization is sorted out, we can move on to actual logic. We would 
 the `process()` method. This corresponds to GDScript's `_process()`. If you need a fixed framerate, use `physics_process()` instead.
 
 ```rust
-{{#rustdoc_include code/hello-world.rs:rotate}}
+{{#rustdoc_include code/hello-world.rs:physics-process}}
 ```
 
 GDScript uses property syntax here; Rust requires explicit method calls instead. Also, access to base class methods -- such as `rotate()`
@@ -365,7 +365,7 @@ Check out the [command-line tutorial][godot-command-line] for more information.
 We now add a translation component to the sprite, following [the upstream tutorial][tutorial-full-script].
 
 ```rust
-{{#rustdoc_include code/hello-world.rs:physics-process}}
+{{#rustdoc_include code/hello-world-phpr-update.rs:physics-process}}
 ```
 
 The result should be a sprite that rotates with an offset.
@@ -381,7 +381,7 @@ annotated with `#[godot_api]`. However, this time we are using an _inherent_ `im
 Concretely, we add a function to increase the speed, and a signal to notify other objects of the speed change.
 
 ```rust
-{{#rustdoc_include code/hello-world.rs:custom-api}}
+{{#rustdoc_include code/hello-world-phpr-update.rs:custom-api}}
 ```
 
 `#[godot_api]` takes again the role of exposing the API to the Godot engine. But there are also two new attributes:
