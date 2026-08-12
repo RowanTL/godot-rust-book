@@ -26,11 +26,8 @@ additional-css = ["config/mdbook-admonish.css", "config/tomorrow-noon.css"]
 default-theme = "godot-rust-light"
 preferred-dark-theme = "godot-rust-dark"
 
-# Snippets in this book are library code (cdylib entry points, #[godot_api] impls, ...) and
-# depend on the `godot` crate, so none of them can run on play.rust-lang.org. Without this,
-# mdbook silently wraps every Rust block in a hidden `fn main() { ... }`, which the "show
-# hidden lines" eye icon then reveals as if it were real code. Explicit `# ` hidden lines
-# still work as usual.
+# Disable play.rust-lang.org and the play button on code examples
+# by extension.
 [output.html.playground]
 runnable = false
 
