@@ -50,11 +50,11 @@ impl ISprite2D for Player {
     // ANCHOR_END: init
 
     // ANCHOR: physics-process
-    fn physics_process(&mut self, delta: f64) {
+    fn physics_process(&mut self, delta: f32) {
         // In GDScript, this would be:
         // rotation += angular_speed * delta
 
-        let radians = (self.angular_speed * delta) as f32;
+        let radians = self.angular_speed as f32 * delta;
         self.base_mut().rotate(radians);
         // The 'rotate' method requires a f32,
         // therefore we convert 'self.angular_speed * delta' which is a f64 to a f32

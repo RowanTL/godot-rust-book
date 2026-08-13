@@ -52,14 +52,14 @@ impl ISprite2D for Player {
     // ANCHOR_END: init
 
     // ANCHOR: physics-process
-    fn physics_process(&mut self, delta: f64) {
+    fn physics_process(&mut self, delta: f32) {
         // GDScript code:
         //
         // rotation += angular_speed * delta
         // var velocity = Vector2.UP.rotated(rotation) * speed
         // position += velocity * delta
 
-        let radians = (self.angular_speed * delta) as f32;
+        let radians = self.angular_speed as f32 * delta;
         self.base_mut().rotate(radians);
 
         let rotation = self.base().get_rotation();
