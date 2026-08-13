@@ -1,8 +1,3 @@
-// Copyright (c) godot-rust; Bromeon and contributors.
-// This Source Code Form is subject to the terms of the Mozilla Public
-// License, v. 2.0. If a copy of the MPL was not distributed with this
-// file, You can obtain one at https://mozilla.org/MPL/2.0/.
-
 // ANCHOR: entry-point
 // ANCHOR: class-declaration
 use godot::prelude::*;
@@ -50,11 +45,11 @@ impl ISprite2D for Player {
     // ANCHOR_END: init
 
     // ANCHOR: physics-process
-    fn physics_process(&mut self, delta: f64) {
+    fn physics_process(&mut self, delta: f32) {
         // In GDScript, this would be:
         // rotation += angular_speed * delta
 
-        let radians = (self.angular_speed * delta) as f32;
+        let radians = self.angular_speed as f32 * delta;
         self.base_mut().rotate(radians);
         // The 'rotate' method requires a f32,
         // therefore we convert 'self.angular_speed * delta' which is a f64 to a f32
